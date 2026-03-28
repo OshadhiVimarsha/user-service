@@ -2,24 +2,9 @@ spring:
   application:
     name: user-service
 
-  # Config Server use කරන්න අවශ්‍ය නම්
   config:
-    import: optional:configserver:http://localhost:9000
+    import: "optional:configserver:"
 
-  datasource:
-    url: jdbc:mysql://localhost:12500/Library_Management_System
-    username: root
-    password: Ijse123
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-  data:
-    rest:
-      base-path: /api/v1
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
+  cloud:
+   config:
+     uri: http://localhost:9000
